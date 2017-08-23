@@ -4,6 +4,7 @@ import android.Manifest;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -256,6 +257,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(mContext, "文件以保存至：" + path, Toast.LENGTH_SHORT).show();
             send.stopAnim();
             recordLayout.setVisibility(View.VISIBLE);
+            Intent intent=new Intent(mContext,SendActivity.class);
+            intent.putExtra("path",path);
+            startActivity(intent);
         }
     };
 
